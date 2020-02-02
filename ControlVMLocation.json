@@ -1,0 +1,44 @@
+{
+  "properties": {
+    "displayName": "Control location of VM creation",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "restrict creaton of VM to specific locations only ",
+    "metadata": {
+      "createdBy": "9303234a-b0e1-4079-9115-4603d37c52b9",
+      "createdOn": "2020-01-26T16:38:07.6876477Z",
+      "updatedBy": "9303234a-b0e1-4079-9115-4603d37c52b9",
+      "updatedOn": "2020-02-01T11:43:04.3503198Z"
+    },
+    "parameters": {
+      "allowedLocations": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed locations",
+          "description": "The list of locations that can be specified when deploying resources",
+          "strongType": "location"
+        },
+        "allowedValues": [
+          "uaenorth"
+        ],
+        "defaultValue": [
+          "uaenorth"
+        ]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "location",
+          "in": "[parameters('allowedLocations')]"
+        }
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  },
+  "id": "/subscriptions/e3eb13ab-d812-42cc-875f-1e4f498dde50/providers/Microsoft.Authorization/policyDefinitions/dcae43b9-d1be-4261-8383-d461b4cee575",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "dcae43b9-d1be-4261-8383-d461b4cee575"
+}
