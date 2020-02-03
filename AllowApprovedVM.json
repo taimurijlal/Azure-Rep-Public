@@ -9,7 +9,7 @@
       "createdBy": "9303234a-b0e1-4079-9115-4603d37c52b9",
       "createdOn": "2020-02-01T11:17:43.3196184Z",
       "updatedBy": "9303234a-b0e1-4079-9115-4603d37c52b9",
-      "updatedOn": "2020-02-01T11:23:34.9552038Z"
+      "updatedOn": "2020-02-03T11:34:59.3934088Z"
     },
     "parameters": {
       "imageIds": {
@@ -17,7 +17,12 @@
         "metadata": {
           "displayName": "Approved VM images",
           "description": "The list of approved VM images. Example values: '/subscriptions/<subscriptionId>/resourceGroups/YourResourceGroup/providers/Microsoft.Compute/images/ContosoStdImage' or /Subscriptions/<subscriptionId>/Providers/Microsoft.Compute/Locations/centralus/Publishers/MicrosoftWindowsServer/ArtifactTypes/VMImage/Offers/WindowsServer/Skus/2016-Datacenter/Versions/2016.127.20180510'"
-        }
+        },
+        "allowedValues": [
+          "/subscriptions/a793f44d-7a1b-4cc8-badc-fe352c69f461/resourceGroups/ni-shared-image-gallery/providers/Microsoft.Compute/galleries/ni_infra_images/images/ni-base-18",
+          "/subscriptions/a793f44d-7a1b-4cc8-badc-fe352c69f461/resourceGroups/ni-shared-image-gallery/providers/Microsoft.Compute/galleries/ni_infra_images/images/ni-base-16",
+          "/subscriptions/a793f44d-7a1b-4cc8-badc-fe352c69f461/resourceGroups/ni-shared-image-gallery/providers/Microsoft.Compute/galleries/ni_infra_images/images/ni-docker"
+        ]
       }
     },
     "policyRule": {
