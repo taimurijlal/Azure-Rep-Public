@@ -1,0 +1,37 @@
+{
+  "properties": {
+    "displayName": "Allow approved Windows VM only",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "allow only approved windows golden images ",
+    "metadata": {
+      "createdBy": "9303234a-b0e1-4079-9115-4603d37c52b9",
+      "createdOn": "2020-07-25T05:14:02.2133766Z",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Compute/virtualMachines"
+          },
+          {
+            "not": {
+              "field": "Microsoft.Compute/imageId",
+              "contains": "/subscriptions/a793f44d-7a1b-4cc8-badc-fe352c69f461/resourceGroups/ni-shared-image-gallery/providers/Microsoft.Compute/galleries/ni_infra_images/images/ni-base-windows-server-2016"
+            }
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  },
+  "id": "/subscriptions/e1e0846d-789d-4fbf-bd29-09ee7370c86a/providers/Microsoft.Authorization/policyDefinitions/f9330b5f-5388-42f0-8898-e6e0f495a6e9",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "f9330b5f-5388-42f0-8898-e6e0f495a6e9"
+}
